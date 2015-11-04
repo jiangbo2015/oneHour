@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<span id="h">01</span>：<span id="m">59</span>：<span id="s">59</span>
+	<script type="text/javascript">
+	window.onload=timeFun;
+	var s=0;
+	var m=1;
+     function timeFun(){
+
+     	
+     	if(s<=59){
+     		second=59-s;
+               s++;
+     		if(second<10){second="0"+second;}
+     		document.getElementById("s").innerHTML=second;
+     	}
+     	else{
+             
+               if(m<=59)
+               {
+                      s=1;
+               document.getElementById("s").innerHTML=59; 
+                     minute=59-m;
+                     m++;
+                    if(minute<10){minute="0"+minute;}
+                    document.getElementById("m").innerHTML=minute;
+               }
+     		
+     		else{
+                    clearTimeout(t);
+     			document.getElementById("h").innerHTML="00";
+     			
+     		}
+     	     
+
+     	}
+      var t= setTimeout("timeFun()",10);
+
+     }
+
+	</script>
+	
+</body>
+</html>
